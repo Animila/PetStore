@@ -21,7 +21,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class GetPetActivity extends AppCompatActivity {
+public class PetGetActivity extends AppCompatActivity {
 
     private TextView namePet, idPet;
     private ImageView photoPet;
@@ -41,13 +41,13 @@ public class GetPetActivity extends AppCompatActivity {
         getBtn = (Button) findViewById(R.id.btnLoad);
         idPet = (TextView) findViewById(R.id.id);
 
-        PetStoreService petStoreService = PetStoreService.retrofit.create(PetStoreService.class);
+        PetService petService = PetService.retrofit.create(PetService.class);
         SharedPreferences sharedPreferences = getSharedPreferences("Pets", Context.MODE_PRIVATE);
         Integer myValue = Integer.parseInt(sharedPreferences.getString("new_pet", "123"));
 
         getBtn.setOnClickListener(view -> {
 
-            Call<Pet> pet = petStoreService.getPet(myValue);
+            Call<Pet> pet = petService.getPet(myValue);
             progress.setVisibility(View.VISIBLE);
             pet.enqueue(new Callback<Pet>() {
                 @Override
@@ -74,7 +74,7 @@ public class GetPetActivity extends AppCompatActivity {
                 public void onFailure(Call<Pet> call, Throwable t) {
                     progress.setVisibility(View.INVISIBLE);
                     Log.d("GIT", ""+t.getMessage());
-                    Toast.makeText(GetPetActivity.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PetGetActivity.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
 

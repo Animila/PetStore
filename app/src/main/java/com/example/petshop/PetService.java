@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
-public interface PetStoreService {
+public interface PetService {
 
     @GET("pet/{petId}")
     Call<Pet> getPet(@Path("petId") Integer petId);

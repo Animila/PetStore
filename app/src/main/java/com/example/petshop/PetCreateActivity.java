@@ -18,7 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RegisterActivity extends AppCompatActivity {
+public class PetCreateActivity extends AppCompatActivity {
 
     private Button sendBtn;
     private EditText sendName, sendTag, sendCategory, sendUrl, sendStatus;
@@ -34,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
         sendStatus = (EditText) findViewById(R.id.sendStatus);
 
         sendBtn.setOnClickListener(v -> {
-            PetStoreService petStoreService = PetStoreService.retrofit.create(PetStoreService.class);
+            PetService petService = PetService.retrofit.create(PetService.class);
 
 
             //Добавляем теги
@@ -69,7 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
             editor.apply();
 
 
-            Call<Pet> call = petStoreService.createPet(new_pet);
+            Call<Pet> call = petService.createPet(new_pet);
             call.enqueue(new Callback<Pet>() {
                 @Override
                 public void onResponse(Call<Pet> call, Response<Pet> response) {
@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             });
 
-            Intent getActivity = new Intent(this, GetPetActivity.class);
+            Intent getActivity = new Intent(this, PetGetActivity.class);
             startActivity(getActivity);
         });
 

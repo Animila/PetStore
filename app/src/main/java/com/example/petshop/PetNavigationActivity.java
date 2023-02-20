@@ -28,12 +28,12 @@ public class PetNavigationActivity extends AppCompatActivity {
             finish();
         });
         btnFind.setOnClickListener(v -> {
-            Intent findActivity = new Intent(this, GetPetActivity.class);
+            Intent findActivity = new Intent(this, PetGetActivity.class);
             startActivity(findActivity);
             finish();
         });
         btnCreate.setOnClickListener(v -> {
-            Intent createActivity = new Intent(this, RegisterActivity.class);
+            Intent createActivity = new Intent(this, PetCreateActivity.class);
             startActivity(createActivity);
             finish();
         });
