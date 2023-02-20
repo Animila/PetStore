@@ -6,43 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".PetGetActivity">
 
-    <TextView
-        android:id="@+id/namePat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/namePat"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <Button
-        android:id="@+id/btnLoad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button"
-        android:text="Загрузка"
-        app:backgroundTintMode="add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="328dp" />
-
-    <TextView
-        android:id="@+id/id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLoad" />
-
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
@@ -53,6 +16,124 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398" />
+        app:layout_constraintVertical_bias="0.352" />
+
+    <Button
+        android:id="@+id/btnStep"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button"
+        android:text="Вернуться"
+        app:backgroundTintMode="add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:layout_width="416dp"
+        android:layout_height="467dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="ID:" />
+
+        <TextView
+            android:id="@+id/namePat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Имя:"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/categoryPet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Категория:"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/statusPet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Статус:"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/tegsPet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Теги:"
+            android:textSize="23dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pet_bg_one" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pet_bg_two" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/id_pet"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="243dp"
+            android:layout_height="50dp"
+            android:background="@drawable/input"
+            android:hint="ID"
+            android:paddingLeft="15dp" />
+
+        <Button
+            android:id="@+id/btnLoad"
+            android:layout_width="74dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button"
+            android:insetLeft="1dp"
+            android:insetTop="1dp"
+            android:insetRight="1dp"
+            android:insetBottom="1dp"
+            app:backgroundTintMode="add"
+            app:elevation="1dp"
+            app:icon="@drawable/pet_lupa"
+            app:iconGravity="textTop"
+            app:iconTintMode="multiply" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
