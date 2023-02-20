@@ -17,8 +17,9 @@ public class MainActivity extends AppCompatActivity {
         goPet = (Button) findViewById(R.id.goPets);
 
         goPet.setOnClickListener(v -> {
-            Intent petWindow = new Intent(this, RegisterActivity.class);
+            Intent petWindow = new Intent(this, PetNavigationActivity.class);
             startActivity(petWindow);
+            finish();
         });
     }
 }
