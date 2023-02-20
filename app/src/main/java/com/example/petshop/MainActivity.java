@@ -24,7 +24,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView namePet;
+    private TextView namePet, idPet;
     private ImageView photoPet;
     private Button getBtn;
     private ProgressBar progress;
@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         namePet = (TextView) findViewById(R.id.namePat);
         photoPet = (ImageView) findViewById(R.id.imageView);
         getBtn = (Button) findViewById(R.id.btnLoad);
+        idPet = (TextView) findViewById(R.id.id);
+
         PetStoreService petStoreService = PetStoreService.retrofit.create(PetStoreService.class);
         SharedPreferences sharedPreferences = getSharedPreferences("Pets", Context.MODE_PRIVATE);
         Integer myValue = Integer.parseInt(sharedPreferences.getString("new_pet", "123"));
@@ -55,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
                         progress.setVisibility(View.INVISIBLE);
 
                         Pet pet = response.body();
-                        namePet.setText("Идентификатор: "+ pet.getId() + "\n" + "Имя: "+ pet.getName());
+                        idPet.setText("Идентификатор: "+ pet.getId());
+                        namePet.setText("Имя: "+ pet.getName());
                         List<String> petPhoto = pet.getPhotoUrls();
                         Picasso
                                 .get()
