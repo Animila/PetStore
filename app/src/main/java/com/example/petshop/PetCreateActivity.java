@@ -25,7 +25,7 @@ public class PetCreateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_pet_create);
         sendBtn = (Button) findViewById(R.id.sendBtn);
         sendName = (EditText) findViewById(R.id.sendName);
         sendTag = (EditText) findViewById(R.id.sendTag);
