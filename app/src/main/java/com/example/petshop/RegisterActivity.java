@@ -1,7 +1,5 @@
 package com.example.petshop;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -11,13 +9,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Random;
 
 import retrofit2.Call;
@@ -88,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             });
 
-            Intent getActivity = new Intent(this, MainActivity.class);
+            Intent getActivity = new Intent(this, GetPetActivity.class);
             startActivity(getActivity);
         });
 
