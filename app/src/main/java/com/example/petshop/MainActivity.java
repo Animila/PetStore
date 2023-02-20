@@ -2,6 +2,8 @@ package com.example.petshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +19,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
+import retrofit2.Converter;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,9 +41,12 @@ public class MainActivity extends AppCompatActivity {
         photoPet = (ImageView) findViewById(R.id.imageView);
         getBtn = (Button) findViewById(R.id.btnLoad);
         PetStoreService petStoreService = PetStoreService.retrofit.create(PetStoreService.class);
+        SharedPreferences sharedPreferences = getSharedPreferences("Pets", Context.MODE_PRIVATE);
+        Integer myValue = Integer.parseInt(sharedPreferences.getString("new_pet", "123"));
 
         getBtn.setOnClickListener(view -> {
-            Call<Pet> pet = petStoreService.getPet();
+
+            Call<Pet> pet = petStoreService.getPet(myValue);
             progress.setVisibility(View.VISIBLE);
             pet.enqueue(new Callback<Pet>() {
                 @Override
@@ -49,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         progress.setVisibility(View.INVISIBLE);
 
                         Pet pet = response.body();
-                        namePet.setText(pet.getName());
+                        namePet.setText("Идентификатор: "+ pet.getId() + "\n" + "Имя: "+ pet.getName());
                         List<String> petPhoto = pet.getPhotoUrls();
                         Picasso
                                 .get()
