@@ -3,6 +3,7 @@ package com.example.petshop;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.POST;
@@ -15,6 +16,9 @@ public interface PetService {
 
     @POST("pet")
     Call<Pet> createPet(@Body Pet pet);
+
+    @DELETE("pet/{petId}")
+    Call<Pet> deletePet(@Path("petId") Integer petId);
 
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://petstore.swagger.io/v2/")

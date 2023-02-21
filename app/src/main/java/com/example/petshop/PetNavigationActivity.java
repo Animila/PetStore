@@ -20,7 +20,7 @@ public class PetNavigationActivity extends AppCompatActivity {
         btnFind = (Button) findViewById(R.id.btnFind);
         btnCreate = (Button) findViewById(R.id.btnCreate);
         btnChange = (Button) findViewById(R.id.btnChange);
-        btnDelete = (Button) findViewById(R.id.btnDelete);
+        btnDelete = (Button) findViewById(R.id.btnGoDelete);
 
         btnHome.setOnClickListener(v -> {
             Intent startActivity = new Intent(this, MainActivity.class);
@@ -38,7 +38,9 @@ public class PetNavigationActivity extends AppCompatActivity {
             finish();
         });
         btnDelete.setOnClickListener(v -> {
-
+            Intent delete = new Intent(this, PetDeleteActivity.class);
+            startActivity(delete);
+            finish();
         });
         btnChange.setOnClickListener(v -> {
 
