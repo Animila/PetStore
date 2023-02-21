@@ -6,6 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".PetCreateActivity">
 
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pet_bg_one" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pet_bg_two" />
+
+    <Button
+        android:id="@+id/btnStep2"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button"
+        android:text="Вернуться"
+        app:backgroundTintMode="add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="323dp"
@@ -17,34 +49,57 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <EditText
+            android:id="@+id/sendID"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/input"
+            android:hint="ID животного"
+            android:paddingLeft="20dp" />
+
+        <EditText
             android:id="@+id/sendName"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="Имя животного" />
+            android:layout_height="35dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/input"
+            android:hint="Имя животного"
+            android:paddingLeft="20dp" />
 
         <EditText
             android:id="@+id/sendCategory"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="Категория" />
+            android:layout_height="35dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/input"
+            android:hint="Категория"
+            android:paddingLeft="20dp" />
 
         <EditText
             android:id="@+id/sendTag"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="Тег" />
+            android:layout_height="35dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/input"
+            android:hint="Тег"
+            android:paddingLeft="20dp" />
 
         <EditText
             android:id="@+id/sendStatus"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="Статус" />
+            android:layout_height="35dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/input"
+            android:hint="Статус"
+            android:paddingLeft="20dp" />
 
         <EditText
             android:id="@+id/sendUrl"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="Url изображения" />
+            android:layout_height="35dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/input"
+            android:hint="Url изображения"
+            android:paddingLeft="20dp" />
 
     </LinearLayout>
 
@@ -62,16 +117,25 @@
 
     <Button
         android:id="@+id/sendBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="155dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/button"
         android:text="Создать"
         app:backgroundTintMode="add"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
